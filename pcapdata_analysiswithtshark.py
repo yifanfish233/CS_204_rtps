@@ -99,6 +99,6 @@ def process_rtps_records(file_path, record_total):
     visualize_packet_events(df)
     visualize_packet_types_over_records(df)
 
-file_path = '/Users/andyfish/Downloads/autoware_wireshark_file2.pcap'
-record_total = 50000
+file_path = 'sample_rtps_5000.pcap'
+record_total = 5000
 process_rtps_records(file_path, record_total)

@@ -81,5 +81,5 @@ def plot_throughput_by_dst_port(df, dst_ip):
     plt.title(f'Throughput Distribution by Destination Port within {dst_ip}')
     plt.show()
 
-file_path = '/Users/andyfish/Downloads/autoware_wireshark_file2.pcapng'
+file_path = 'sample_rtps_5000.pcap'
 analyze_pcapng(file_path)
