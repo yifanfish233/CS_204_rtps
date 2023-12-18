@@ -79,7 +79,18 @@ def plot_throughput_by_dst_port(df, dst_ip):
     plt.figure(figsize=(10, 6))
     plt.pie(data_sum_by_dst_port, labels=labels, autopct='%1.1f%%', startangle=140)
     plt.title(f'Throughput Distribution by Destination Port within {dst_ip}')
+    data_sum_by_dst_port = df[df['dst_ip'] == dst_ip].groupby('dst_port')['data_size'].sum()
+    labels = [f'Port {port} ({size} packets)' for port, size in data_sum_by_dst_port.items()]
+    plt.figure(figsize=(10, 6))
+    plt.pie(data_sum_by_dst_port, labels=labels, autopct='%1.1f%%', startangle=140)
+    title = f'Throughput Distribution by Destination Port within {dst_ip}'
+    plt.title(title)
+
+    # make it easier to read the labels by save them.
+    filename = title.replace(' ', '_') + '.png'
+    plt.savefig(filename)
     plt.show()
+    print(f"Plot saved as {filename}")
 
 file_path = 'sample_rtps_5000.pcap'
 analyze_pcapng(file_path)

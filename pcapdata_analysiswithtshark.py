@@ -40,7 +40,10 @@ def visualize_packet_events(df):
     plt.yticks([])
     plt.title('Packet Type Events Over Records')
     plt.legend()
-    plt.show()
+    filename = 'Packet_Type_Events_Over_Records.png'
+    plt.savefig(filename)
+    print(f"Plot saved as {filename}")
+    # plt.show()
 
 def visualize_packet_types_over_records(df):
     # 确保 'Record Number' 是有序的
@@ -72,6 +75,9 @@ def visualize_packet_types_over_records(df):
     plt.ylabel('Cumulative Count')
     plt.title('Cumulative Packet Types Over Records')
     plt.legend()
+    filename = 'Cumulative_Packet_Types_Over_Records.png'
+    plt.savefig(filename)
+    print(f"Plot saved as {filename}")
     plt.show()
 def process_rtps_records(file_path, record_total):
     extracted_data_list = []

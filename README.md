@@ -20,4 +20,4 @@ This project is to analyze the DDS communication between Autoware and AWSIM. The
 
 Autoware.Universe and AWSIM are both follow the installation guide by the GitHub: https://github.com/tier4/AWSIM 
 
-
+Run independently of these two python scripts, will generate the plots for evaluation.
